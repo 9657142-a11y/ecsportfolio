@@ -1,74 +1,56 @@
 @charset "UTF-8";
-
-/* Global */
+/* This is a comment! Text here will be ignored by the browser. */
 body {
-    margin: 0 auto;
-    font: 100%/1.4 Verdana, Arial, Helvetica, sans-serif;
+	margin: 0 auto;
+	font: 100%/1.4 Verdana, Arial, Helvetica, sans-serif;
 }
-
-/* Page background */
 .homePage {
-    background: #F53D00;
+	background: #F53D00;
 }
-
-/* Centered container */
 .container {
-    width: 960px;
-    margin: 0 auto;
+	width: 960px;
+	margin: 0 auto;
 }
-
-/* Header */
 .header {
-    background: #F51300;
-    text-align: center;
-    margin: 0;
-    padding: 5px;
-    float: left;
-    width: 100%;
-    height: 80px;
+	background: #F51300;
+	text-align: center;
+	margin: 0px;
+	padding: 5;
+	float: left;
+	width: 100%;
+	height: 80px;
+	
 }
-
-/* Navigation */
 .nav {
-    background: #F5B003;
-    margin: 0;
-    padding: 5px;
-    float: left;
-    width: 100%;
-    height: 60px;
-    text-align: center;
+	background: #F5B003;
+	margin: 0px;
+	padding: 5;
+	float: left;
+	width: 100%;
+	height: 60px;
+	text-align: center;
 }
-
-/* Main content */
 .content {
-    background: #F53D00;
-    margin: 0;
-    float: left;
-    width: 100%;
-    text-align: center;
+	background: #F53D00;
+	margin: 0px;
+	float: left;
+	width: 100%;
+	text-align: center;
 }
-
-/* Footer */
 .footer {
-    background: #777777;
-    margin: 0;
-    float: left;
-    width: 100%;
-    height: 50px;
-    text-align: center;
+	background: #777777;
+	margin: 0px;
+	float: left;
+	width: 100%;
+	height: 50px;
+	text-align: center;
 }
-
-/* Links */
 a:link {
-    color: #000000;
+     color: #000000;
 }
-
 a:visited {
-    color: #F51300;
+     color: #F51300;
 }
-
-a:hover,
-a:active,
-a:focus {
-    text-decoration: underline;
+a:hover, a:active, a:focus { 
+     text-decoration: underline;
 }
