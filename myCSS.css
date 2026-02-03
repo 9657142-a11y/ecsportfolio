@@ -5,14 +5,14 @@ body {
 	font: 100%/1.4 Verdana, Arial, Helvetica, sans-serif;
 }
 .homePage {
-	background: #FS3D00;
+	background: #F53D00;
 }
 .container {
 	width: 960px;
 	margin: 0 auto;
 }
 .header {
-	background: #FS1300;
+	background: #F51300;
 	text-align: center;
 	margin: 0px;
 	padding: 5;
@@ -22,7 +22,7 @@ body {
 	
 }
 .nav {
-	background: #FSB003;
+	background: #F5B003;
 	margin: 0px;
 	padding: 5;
 	float: left;
@@ -31,7 +31,7 @@ body {
 	text-align: center;
 }
 .content {
-	background: #FS3D00;
+	background: #F53D00;
 	margin: 0px;
 	float: left;
 	width: 100%;
@@ -49,7 +49,7 @@ a:link {
      color: #000000;
 }
 a:visited {
-     color: #FS1300;
+     color: #F51300;
 }
 a:hover, a:active, a:focus { 
      text-decoration: underline;
