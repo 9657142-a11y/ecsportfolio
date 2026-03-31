@@ -1,23 +1,75 @@
 <!DOCTYPE html>
-<html class="homePage">
+<html lang="en">
 <head>
-	<!-- This is a comment! Text here will be ignored by the browser. -->
-	<meta charset="UTF-8">
-	<title>ecs page</title>
-	<link href="../myCSS.css" rel="stylesheet" type="text/css">
+<meta charset="UTF-8">
+<title>Slot Machine Simulator</title>
+<style>
+  body { background: green; text-align: center; font-family: Arial, sans-serif; }
+  canvas { background: darkgreen; margin-top: 20px; }
+  h1 { color: gold; }
+</style>
 </head>
 <body>
-<div class="container">
-  <div class="header">
-  	<h1>ecs page</h1>
-  </div>
-  <div class="nav">
-    <h3> <a href="../index.html">Home</a> | <a href="index.html">ECS</a> | <a href="../utahjazz/index.html">utahjazz</a> </h3>
-  </div>
-  <div class="content">Hello World!</div>
-  <div class="footer">
-    <h4><a href="../aboutme.html">About Me</a> | Contact | Copyright 2025</h4>
-  </div>
-</div>
+
+<h1>Slot Machine Simulator</h1>
+<canvas id="slotCanvas" width="600" height="400"></canvas>
+<p>Press any key to spin!</p>
+
+<script>
+const canvas = document.getElementById('slotCanvas');
+const ctx = canvas.getContext('2d');
+
+const shapes = ['CIRCLE', 'SQUARE', 'TRIANGLE'];
+let slots = [getRandomShape(), getRandomShape(), getRandomShape()];
+let win = false;
+
+function getRandomShape() {
+    return shapes[Math.floor(Math.random() * shapes.length)];
+}
+
+function drawShape(shape, x, y) {
+    ctx.fillStyle = 'white';
+    ctx.strokeStyle = 'black';
+    ctx.lineWidth = 2;
+    ctx.beginPath();
+    if (shape === 'CIRCLE') {
+        ctx.arc(x, y, 40, 0, 2 * Math.PI);
+        ctx.fill();
+        ctx.stroke();
+    } else if (shape === 'SQUARE') {
+        ctx.fillRect(x - 40, y - 40, 80, 80);
+        ctx.strokeRect(x - 40, y - 40, 80, 80);
+    } else if (shape === 'TRIANGLE') {
+        ctx.moveTo(x, y - 40);
+        ctx.lineTo(x - 40, y + 40);
+        ctx.lineTo(x + 40, y + 40);
+        ctx.closePath();
+        ctx.fill();
+        ctx.stroke();
+    }
+}
+
+function drawSlots() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    for (let i = 0; i < slots.length; i++) {
+        drawShape(slots[i], 150 + i * 150, canvas.height / 2);
+    }
+    if (win) {
+        ctx.fillStyle = 'gold';
+        ctx.font = '48px Arial';
+        ctx.fillText('YOU WIN!', canvas.width / 2 - 120, 50);
+    }
+}
+
+document.addEventListener('keydown', () => {
+    slots = [getRandomShape(), getRandomShape(), getRandomShape()];
+    win = (slots[0] === slots[1] && slots[0] === slots[2]);
+    drawSlots();
+});
+
+// Initial draw
+drawSlots();
+</script>
+
 </body>
 </html>
